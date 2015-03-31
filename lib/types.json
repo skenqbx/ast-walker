@@ -1,0 +1,170 @@
+{
+  "spec": "https://github.com/estree/estree/blob/master/spec.md",
+  "group": {
+    "Statement": {
+      "pattern": "*Statement"
+    },
+    "Pattern": {
+      "types": ["Identifier"]
+    },
+    "Literal": {
+      "pattern": "*Literal"
+    },
+    "Function": {
+      "pattern": "Function*"
+    },
+    "Expression": {
+      "pattern": "*Expression"
+    },
+    "Declaration": {
+      "parent": "Statement"
+    }
+  },
+  "unique": {
+    "EmptyStatement": {},
+    "BlockStatement": {
+      "body": ["Statement"]
+    },
+    "ExpressionStatement": {
+      "expression": ["Expression"]
+    },
+    "IfStatement": {
+      "test": "Expression",
+      "consequent": "Statement",
+      "alternate": "?Statement"
+    },
+    "LabeledStatement": {
+      "label": "Identifier",
+      "body": ["Statement"]
+    },
+    "BreakStatement": {
+      "label": "?Identifier"
+    },
+    "ContinueStatement": {
+      "label": "?Identifier"
+    },
+    "SwitchStatement": {
+      "discriminant": "Expression",
+      "cases": ["SwitchCase"],
+      "lexical": "boolean"
+    },
+    "ReturnStatement": {
+      "argument": "?Expression"
+    },
+    "ThrowStatement": {
+      "argument": "Expression"
+    },
+    "TryStatement": {
+      "block": "BlockStatement",
+      "handler": "?CatchClause",
+      "finalizer": "?BlockStatement"
+    },
+    "WhileStatement": {
+      "test": "Expression",
+      "body": "Statement"
+    },
+    "DoWhileStatement": {
+      "body": "Statement",
+      "test": "Expression"
+    },
+    "ForStatement": {
+      "init": "?VariableDeclaration|Expression",
+      "test": "?Expression",
+      "update": "?Expression",
+      "body": "Statement"
+    },
+    "FunctionDeclaration": {
+      "id": "Identifier",
+      "params": ["Pattern"],
+      "body": "BlockStatement"
+    },
+    "VariableDeclaration": {
+      "declarations": ["VariableDeclarator"],
+      "kind": "string"
+    },
+    "VariableDeclarator": {
+      "id": "Pattern",
+      "init": "?Expression"
+    },
+    "ThisExpression": {},
+    "ArrayExpression": {
+      "elements": ["?Expression"]
+    },
+    "ObjectExpression": {
+      "properties": ["Property"]
+    },
+    "Property": {
+      "key": "Literal|Identifier",
+      "value": "Expression",
+      "kind": "string"
+    },
+    "FunctionExpression": {
+      "params": ["Pattern"],
+      "body": "BlockStatement"
+    },
+    "SequenceExpression": {
+      "expressions": ["Expression"]
+    },
+    "UnaryExpression": {
+      "operator": "string",
+      "prefix": "boolean",
+      "argument": "Expression"
+    },
+    "BinaryExpression": {
+      "operator": "string",
+      "left": "Expression",
+      "right": "Expression"
+    },
+    "AssignmentExpression": {
+      "operator": "string",
+      "left": "Pattern|Expression",
+      "right": "Expression"
+    },
+    "UpdateExpression": {
+      "operator": "string",
+      "argument": "Expression",
+      "prefix": "boolean"
+    },
+    "LogicalExpression": {
+      "operator": "string",
+      "left": "Expression",
+      "right": "Expression"
+    },
+    "ConditionalExpression": {
+      "callee": "Expression",
+      "arguments": ["Expression"]
+    },
+    "NewExpression": {},
+    "MemberExpression": {
+      "object": "Expression",
+      "property": "Expression|Identifier",
+      "computed": "boolean"
+    },
+    "SwitchCase": {
+      "test": "?Expression",
+      "consequent": ["Statement"]
+    },
+    "CatchClause": {
+      "param": "Pattern",
+      "guard": "null",
+      "body": "BlockStatement"
+    },
+    "Identifier": {
+      "name": "string"
+    },
+    "Literal": {
+      "value": "string"
+    },
+    "RegexLiteral": {
+      "regex": "object"
+    },
+    "Program": {
+      "body": ["Statement"]
+    },
+    "AssignmentExpression": {
+      "operator": "string",
+      "left": "Pattern|Expression",
+      "right": "Expression"
+    }
+  }
+}
