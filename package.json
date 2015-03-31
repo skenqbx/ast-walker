@@ -15,9 +15,10 @@
   "optionalDependencies": {
   },
   "devDependencies": {
+    "espree": "1.x",
     "mocha": "*",
     "mocha-jenkins-reporter": "*",
-    "eslint": "*",
+    "eslint": "0.x",
     "istanbul": "*"
   },
   "scripts": {
