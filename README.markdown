@@ -1,13 +1,13 @@
 # ast-walker
 
-**_AST traversal_**
+**_Typed Object Traversal_**
 
 ```
 Stability: 1 - Experimental
 ```
 
-`ast-walker` provides event based _typed_ object tree traversal.
-The default [configuration](./lib/types.json) is for an AST that follows the [ESTree spec](https://github.com/estree/estree/blob/master/spec.md), but other configurations can be provided.
+`ast-walker` provides event based _typed object_ tree traversal.
+The default [configuration](./lib/types.json) is for an AST that follows the [ESTree ES5 spec](https://github.com/estree/estree/blob/master/spec.md), but other configurations can be provided.
 
 ## Usage
 
@@ -18,7 +18,9 @@ var espree = require('espree');
 var astWalker = require('ast-walker');
 
 var ast = espree.parse(/* A JavaScript source string*/);
-var walker = astWalker(ast);
+var walker = astWalker(ast, {
+  skipProperties: ['cases'] // don't traverse *.cases
+});
 
 walker.on('FunctionExpression', function(node) {
   if (node.parent.type === 'AssignmentExpression') {
