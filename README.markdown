@@ -20,7 +20,7 @@ var walker = new Walker(ast, {
   skipProperties: ['cases'] // don't traverse *.cases
 });
 
-walker.on('postFunctionExpression', function(node) {
+walker.on('post-FunctionExpression', function(node) {
   if (node.parent.type === 'AssignmentExpression') {
     console.log(/* TODO: access "name" of parent.left */);
   } else {
@@ -28,11 +28,11 @@ walker.on('postFunctionExpression', function(node) {
   }
 });
 
-walker.on('preFunctionDeclaration', function(node) {
-  console.log(node.type, node.get('id')); // TODO: use nodes with variable properties?!
+walker.on('pre-FunctionDeclaration', function(node) {
+  console.log(node.type, node.p('id'));
 });
 
-walker.go();
+walker.traverse();
 ```
 
 ## Tests
@@ -48,8 +48,8 @@ firefox coverage/lcov-report/index.html
 ### Coverage
 
 ```
-Statements   : 93.55% ( 145/155 )
+Statements   : 93.67% ( 148/158 )
 Branches     : 80.25% ( 65/81 )
 Functions    : 88.89% ( 8/9 )
-Lines        : 93.55% ( 145/155 )
+Lines        : 93.67% ( 148/158 )
 ```

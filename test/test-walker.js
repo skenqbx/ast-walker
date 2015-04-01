@@ -43,17 +43,18 @@ suite('Walker', function() {
       AssignmentExpression: {pre: 0, post: 0}
     };
     var i, keys = Object.keys(events);
-    var nodeEventCount = 0;
+    var preNodeEventCount = 0;
+    var postNodeEventCount = 0;
 
     function onEvent(event) {
-      walker.on('pre' + event, function(node) {
+      walker.on('pre-' + event, function(node) {
         assert(node);
         assert(node.type);
 
         ++events[event].pre;
       });
 
-      walker.on('post' + event, function(node) {
+      walker.on('post-' + event, function(node) {
         assert(node);
         assert(node.type);
 
@@ -61,8 +62,12 @@ suite('Walker', function() {
       });
     }
 
-    walker.on('node', function(node) {
-      ++nodeEventCount;
+    walker.on('pre-node', function(node) {
+      ++preNodeEventCount;
+    });
+
+    walker.on('post-node', function(node) {
+      ++postNodeEventCount;
     });
 
     for (i = 0; i < keys.length; ++i) {
@@ -86,6 +91,7 @@ suite('Walker', function() {
     assert.strictEqual(events.SwitchCase.pre, 0);
     assert.strictEqual(events.SwitchCase.post, 0);
 
-    assert.strictEqual(nodeEventCount, 11);
+    assert.strictEqual(preNodeEventCount, 34);
+    assert.strictEqual(postNodeEventCount, 34);
   });
 });
