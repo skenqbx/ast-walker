@@ -4,10 +4,10 @@
 var fs = require('fs');
 var assert = require('assert');
 var espree = require('espree');
-var ASTWalker = require('../');
+var Walker = require('../');
 
 
-suite('ast-walker', function() {
+suite('Walker', function() {
   var walker;
 
   suiteSetup(function(done) {
@@ -18,7 +18,7 @@ suite('ast-walker', function() {
       attachComment: true
     });
 
-    walker = new ASTWalker(ast);
+    walker = new Walker(ast);
 
     done();
   });

@@ -17,7 +17,8 @@
       "pattern": "*Expression"
     },
     "Declaration": {
-      "parent": "Statement"
+      "parent": "Statement",
+      "pattern": "*Declaration"
     }
   },
   "unique": {
@@ -146,7 +147,6 @@
     },
     "CatchClause": {
       "param": "Pattern",
-      "guard": "null",
       "body": "BlockStatement"
     },
     "Identifier": {

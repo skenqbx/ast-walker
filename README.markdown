@@ -6,7 +6,7 @@
 Stability: 1 - Experimental
 ```
 
-`ast-walker` provides event based _typed object_ tree traversal.
+`ast-walker` provides _typed object_ tree traversal.
 The default [configuration](./lib/types.json) is for an AST that follows the [ESTree ES5 spec](https://github.com/estree/estree/blob/master/spec.md), but other configurations can be provided.
 
 ## Usage
@@ -15,10 +15,10 @@ The default [configuration](./lib/types.json) is for an AST that follows the [ES
 
 ```js
 var espree = require('espree');
-var astWalker = require('ast-walker');
+var Walker = require('ast-walker');
 
 var ast = espree.parse(/* A JavaScript source string*/);
-var walker = astWalker(ast, {
+var walker = new Walker(ast, {
   skipProperties: ['cases'] // don't traverse *.cases
 });
 
@@ -37,13 +37,10 @@ walker.on('FunctionDeclaration', function(node) {
 walker.go();
 ```
 
-### Compatible Parsers
-
- - [espree](https://github.com/eslint/espree)
-  - support for `attachComment`, `range` & `loc` options
- - ...
-
 ## Tests
+
+[Espree](https://github.com/eslint/espree) is used for testing of AST traversal.
+
 
 ```bash
 npm test

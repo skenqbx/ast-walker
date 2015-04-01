@@ -2,14 +2,14 @@
 /* global suite: false, setup: false, test: false,
     teardown: false, suiteSetup: false, suiteTeardown: false */
 var assert = require('assert');
-var ASTWalker = require('../');
+var Walker = require('../');
 
 
-suite('types', function() {
+suite('Walker.Types', function() {
   var types;
 
   test('init', function() {
-    types = new ASTWalker.Types();
+    types = new Walker.Types();
   });
 
   suiteTeardown(function(done) {
