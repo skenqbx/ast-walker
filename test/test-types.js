@@ -8,18 +8,18 @@ var Walker = require('../');
 suite('Walker.Types', function() {
   var types;
 
-  test('new', function() {
+  test('new Walker.Types()', function() {
     types = new Walker.Types();
   });
 
 
-  test('keys(\'Property\')', function() {
+  test('Types#keys(\'Property\')', function() {
     var keys = types.keys('Property');
     assert.deepEqual(keys, ['key', 'value', 'kind']);
   });
 
 
-  test('keys(\'Property\', true)', function() {
+  test('Types#keys(\'Property\', true)', function() {
     var keys = types.keys('Property', true);
     assert.deepEqual(keys, ['key', 'value']);
   });

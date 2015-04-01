@@ -27,7 +27,7 @@
       "body": ["Statement"]
     },
     "ExpressionStatement": {
-      "expression": ["Expression"]
+      "expression": "Expression"
     },
     "IfStatement": {
       "test": "Expression",
@@ -136,6 +136,10 @@
       "arguments": ["Expression"]
     },
     "NewExpression": {},
+    "CallExpression": {
+      "callee": "Expression",
+      "arguments": ["Expression"]
+    },
     "MemberExpression": {
       "object": "Expression",
       "property": "Expression|Identifier",

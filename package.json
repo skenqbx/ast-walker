@@ -1,13 +1,18 @@
 {
   "name": "ast-walker",
-  "version": "1.0.0",
-  "author": {
-    "name": "Malte-Thorben Bruns",
-    "email": "skenqbx@gmail.com"
-  },
+  "version": "0.90.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/skenqbx/ast-walker.git"
+  },
+  "description": "",
+  "keywords": [
+    "AST",
+    "traversal"
+  ],
+  "author": {
+    "name": "Malte-Thorben Bruns",
+    "email": "skenqbx@gmail.com"
   },
   "private": true,
   "dependencies": {
@@ -19,7 +24,7 @@
     "mocha": "*",
     "mocha-jenkins-reporter": "*",
     "eslint": "0.x",
-    "istanbul": "*"
+    "istanbul": "0.x"
   },
   "scripts": {
     "lint": "node_modules/.bin/eslint ./",
@@ -27,6 +32,7 @@
     "clean": "rm -rf node_modules/ && rm -rf coverage/ && rm npm-debug.log"
   },
   "engines": {
-    "node": ">=0.10.38 <0.11.0"
+    "node": ">=0.10.38 <0.11.0",
+    "npm": "2.x"
   }
 }

@@ -11,8 +11,6 @@ The default [configuration](./lib/types.json) is for an AST that follows the [ES
 
 ## Usage
 
-**Nothing works yet**
-
 ```js
 var espree = require('espree');
 var Walker = require('ast-walker');
@@ -22,7 +20,7 @@ var walker = new Walker(ast, {
   skipProperties: ['cases'] // don't traverse *.cases
 });
 
-walker.on('FunctionExpression', function(node) {
+walker.on('postFunctionExpression', function(node) {
   if (node.parent.type === 'AssignmentExpression') {
     console.log(/* TODO: access "name" of parent.left */);
   } else {
@@ -30,7 +28,7 @@ walker.on('FunctionExpression', function(node) {
   }
 });
 
-walker.on('FunctionDeclaration', function(node) {
+walker.on('preFunctionDeclaration', function(node) {
   console.log(node.type, node.get('id')); // TODO: use nodes with variable properties?!
 });
 
@@ -50,8 +48,8 @@ firefox coverage/lcov-report/index.html
 ### Coverage
 
 ```
-Statements   : XX% ( YY/ZZ )
-Branches     : XX% ( YY/ZZ )
-Functions    : XX% ( YY/ZZ )
-Lines        : XX% ( YY/ZZ )
+Statements   : 93.55% ( 145/155 )
+Branches     : 80.25% ( 65/81 )
+Functions    : 88.89% ( 8/9 )
+Lines        : 93.55% ( 145/155 )
 ```
