@@ -1,4 +1,4 @@
-# ast-walker
+# ast-walker [![Build Status](https://secure.travis-ci.org/skenqbx/ast-walker.png)](http://travis-ci.org/skenqbx/ast-walker)
 
 **_Typed Object Traversal_**
 
