@@ -28,7 +28,13 @@ walker.on('post-FunctionExpression', function(node) {
   }
 });
 
-walker.on('pre-FunctionDeclaration', function(node) {
+// emitted for every Node
+walker.on('pre-group-Node', function(node) {
+  console.log(node.type, node.p('id'));
+});
+
+// emitted for *Statement & *Declaration
+walker.on('pre-group-Statement', function(node) {
   console.log(node.type, node.p('id'));
 });
 
@@ -48,8 +54,8 @@ firefox coverage/lcov-report/index.html
 ### Coverage
 
 ```
-Statements   : 93.67% ( 148/158 )
+Statements   : 93.87% ( 153/163 )
 Branches     : 80.25% ( 65/81 )
-Functions    : 88.89% ( 8/9 )
-Lines        : 93.67% ( 148/158 )
+Functions    : 90.00% ( 9/10 )
+Lines        : 93.87% ( 153/163 )
 ```

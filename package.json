@@ -1,10 +1,6 @@
 {
   "name": "ast-walker",
   "version": "0.90.0",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/skenqbx/ast-walker.git"
-  },
   "description": "",
   "keywords": [
     "AST",
@@ -14,6 +10,10 @@
     "name": "Malte-Thorben Bruns",
     "email": "skenqbx@gmail.com"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/skenqbx/ast-walker.git"
+  },
   "private": true,
   "dependencies": {},
   "optionalDependencies": {},
@@ -22,8 +22,7 @@
     "espree": "1.12.3",
     "istanbul": "0.3.13",
     "mocha": "2.2.1",
-    "mocha-jenkins-reporter": "*",
-    "next-update": "0.x"
+    "next-update": "0.7.4"
   },
   "scripts": {
     "lint": "node_modules/.bin/eslint ./",
@@ -32,7 +31,7 @@
     "clean": "rm -rf node_modules/ && rm -rf coverage/ && rm npm-debug.log"
   },
   "engines": {
-    "node": ">=0.10.38 <0.11.0",
-    "npm": "2.x"
+    "node": ">=0.10",
+    "npm": "~2.7.3"
   }
 }
