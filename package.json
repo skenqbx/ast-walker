@@ -15,20 +15,20 @@
     "email": "skenqbx@gmail.com"
   },
   "private": true,
-  "dependencies": {
-  },
-  "optionalDependencies": {
-  },
+  "dependencies": {},
+  "optionalDependencies": {},
   "devDependencies": {
-    "espree": "1.x",
-    "mocha": "*",
+    "eslint": "0.18.0",
+    "espree": "1.12.3",
+    "istanbul": "0.3.13",
+    "mocha": "2.2.1",
     "mocha-jenkins-reporter": "*",
-    "eslint": "0.x",
-    "istanbul": "0.x"
+    "next-update": "0.x"
   },
   "scripts": {
     "lint": "node_modules/.bin/eslint ./",
     "test": "node_modules/.bin/eslint ./ && node_modules/.bin/istanbul cover node_modules/.bin/_mocha -- ./test",
+    "update": "node_modules/.bin/next-update -k",
     "clean": "rm -rf node_modules/ && rm -rf coverage/ && rm npm-debug.log"
   },
   "engines": {
