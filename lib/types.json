@@ -10,15 +10,15 @@
     "Literal": {
       "pattern": "*Literal"
     },
-    "Function": {
-      "pattern": "Function*"
-    },
     "Expression": {
       "pattern": "*Expression"
     },
     "Declaration": {
       "parent": "Statement",
       "pattern": "*Declaration"
+    },
+    "Function": {
+      "pattern": "Function*"
     }
   },
   "unique": {

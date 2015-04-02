@@ -36,17 +36,22 @@ suite('Walker', function() {
     });
 
     var events = {
-      SwitchCase: {pre: 0, post: 0},
-      FunctionExpression: {pre: 0, post: 0},
-      FunctionDeclaration: {pre: 0, post: 0},
-      MemberExpression: {pre: 0, post: 0},
-      AssignmentExpression: {pre: 0, post: 0}
+      SwitchCase: true,
+      FunctionExpression: true,
+      FunctionDeclaration: true,
+      MemberExpression: true,
+      AssignmentExpression: true,
+      'group-Node': true,
+      'group-Expression': true,
+      'group-Statement': true,
+      'group-Declaration': true,
+      'group-Function': true
     };
     var i, keys = Object.keys(events);
-    var preNodeEventCount = 0;
-    var postNodeEventCount = 0;
 
     function onEvent(event) {
+      events[event] = {pre: 0, post: 0};
+
       walker.on('pre-' + event, function(node) {
         assert(node);
         assert(node.type);
@@ -61,14 +66,6 @@ suite('Walker', function() {
         ++events[event].post;
       });
     }
-
-    walker.on('pre-node', function(node) {
-      ++preNodeEventCount;
-    });
-
-    walker.on('post-node', function(node) {
-      ++postNodeEventCount;
-    });
 
     for (i = 0; i < keys.length; ++i) {
       onEvent(keys[i]);
@@ -91,7 +88,19 @@ suite('Walker', function() {
     assert.strictEqual(events.SwitchCase.pre, 0);
     assert.strictEqual(events.SwitchCase.post, 0);
 
-    assert.strictEqual(preNodeEventCount, 34);
-    assert.strictEqual(postNodeEventCount, 34);
+    assert.strictEqual(events['group-Node'].pre, 34);
+    assert.strictEqual(events['group-Node'].post, 34);
+
+    assert.strictEqual(events['group-Expression'].pre, 8);
+    assert.strictEqual(events['group-Expression'].post, 8);
+
+    assert.strictEqual(events['group-Statement'].pre, 8);
+    assert.strictEqual(events['group-Statement'].post, 8);
+
+    assert.strictEqual(events['group-Declaration'].pre, 2);
+    assert.strictEqual(events['group-Declaration'].post, 2);
+
+    assert.strictEqual(events['group-Function'].pre, 3);
+    assert.strictEqual(events['group-Function'].post, 3);
   });
 });
