@@ -3,6 +3,7 @@
 
 
 function ClassName() {
+  this.name = 'class';
 }
 module.exports = ClassName;
 

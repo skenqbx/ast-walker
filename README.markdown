@@ -30,12 +30,12 @@ walker.on('post-FunctionExpression', function(node) {
 
 // emitted for every Node
 walker.on('pre-group-Node', function(node) {
-  console.log(node.type, node.p('id'));
+
 });
 
 // emitted for *Statement & *Declaration
 walker.on('pre-group-Statement', function(node) {
-  console.log(node.type, node.p('id'));
+
 });
 
 walker.traverse();
@@ -54,8 +54,8 @@ firefox coverage/lcov-report/index.html
 ### Coverage
 
 ```
-Statements   : 93.87% ( 153/163 )
-Branches     : 80.25% ( 65/81 )
-Functions    : 90.00% ( 9/10 )
-Lines        : 93.87% ( 153/163 )
+Statements   : 90.82% ( 188/207 )
+Branches     : 80.34% ( 94/117 )
+Functions    : 100%   ( 11/11 )
+Lines        : 90.82% ( 188/207 )
 ```

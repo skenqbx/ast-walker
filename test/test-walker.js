@@ -79,23 +79,23 @@ suite('Walker', function() {
     assert.strictEqual(events.FunctionDeclaration.pre, 2);
     assert.strictEqual(events.FunctionDeclaration.post, 2);
 
-    assert.strictEqual(events.MemberExpression.pre, 4);
-    assert.strictEqual(events.MemberExpression.post, 4);
+    assert.strictEqual(events.MemberExpression.pre, 5);
+    assert.strictEqual(events.MemberExpression.post, 5);
 
-    assert.strictEqual(events.AssignmentExpression.pre, 2);
-    assert.strictEqual(events.AssignmentExpression.post, 2);
+    assert.strictEqual(events.AssignmentExpression.pre, 3);
+    assert.strictEqual(events.AssignmentExpression.post, 3);
 
     assert.strictEqual(events.SwitchCase.pre, 0);
     assert.strictEqual(events.SwitchCase.post, 0);
 
-    assert.strictEqual(events['group-Node'].pre, 34);
-    assert.strictEqual(events['group-Node'].post, 34);
+    assert.strictEqual(events['group-Node'].pre, 40);
+    assert.strictEqual(events['group-Node'].post, 40);
 
-    assert.strictEqual(events['group-Expression'].pre, 8);
-    assert.strictEqual(events['group-Expression'].post, 8);
+    assert.strictEqual(events['group-Expression'].pre, 11);
+    assert.strictEqual(events['group-Expression'].post, 11);
 
-    assert.strictEqual(events['group-Statement'].pre, 8);
-    assert.strictEqual(events['group-Statement'].post, 8);
+    assert.strictEqual(events['group-Statement'].pre, 9);
+    assert.strictEqual(events['group-Statement'].post, 9);
 
     assert.strictEqual(events['group-Declaration'].pre, 2);
     assert.strictEqual(events['group-Declaration'].post, 2);

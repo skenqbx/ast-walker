@@ -24,7 +24,7 @@
   "unique": {
     "EmptyStatement": {},
     "BlockStatement": {
-      "body": ["Statement"]
+      "body": ["?Statement"]
     },
     "ExpressionStatement": {
       "expression": "Expression"
