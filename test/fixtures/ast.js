@@ -11,7 +11,6 @@ module.exports = ClassName;
 ClassName.prototype.test = function(arg1, arg2, arg3) {
 
   function next() {
-    console.log('anonymous');
   }
 
   switch (arg1) {
@@ -22,4 +21,6 @@ ClassName.prototype.test = function(arg1, arg2, arg3) {
     default:
       return 3;
   }
+
+  next();
 };

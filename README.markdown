@@ -7,7 +7,7 @@ Stability: 1 - Experimental
 ```
 
 `ast-walker` provides _typed object_ tree traversal.
-The default [configuration](./lib/types.json) is for an AST that follows the [ESTree ES5 spec](https://github.com/estree/estree/blob/master/spec.md), but other configurations can be provided.
+The default tree [configuration](./lib/types.json) is for an AST that follows the Espree structure, but other configurations can be provided.
 
 ## Usage
 
@@ -54,8 +54,8 @@ firefox coverage/lcov-report/index.html
 ### Coverage
 
 ```
-Statements   : 92.16% ( 188/204 )
-Branches     : 82.30% ( 93/113 )
+Statements   : 94.26% ( 197/209 )
+Branches     : 85.05% ( 91/107 )
 Functions    : 100%   ( 11/11 )
-Lines        : 92.16% ( 188/204 )
+Lines        : 94.26% ( 197/209 )
 ```

@@ -36,6 +36,7 @@ suite('Node', function() {
     walker.once('pre-AssignmentExpression', function(node) {
       var right = node.n('right');
       assert(right);
+      assert(right === node.n('right'));
       assert.strictEqual(right.type, 'Literal');
 
       assert.throws(function() {
@@ -60,6 +61,8 @@ suite('Node', function() {
 
       var statements = node.n('body');
       assert(statements);
+
+      assert(body === statements[0]);
 
       assert.throws(function() {
         node.n('body', 10);
