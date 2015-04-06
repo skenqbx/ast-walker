@@ -137,8 +137,8 @@
       "right": "Expression"
     },
     "ConditionalExpression": {
-      "callee": "Expression",
-      "arguments": ["Expression"]
+      "callee": "?Expression",
+      "arguments": ["?Expression"]
     },
     "NewExpression": {},
     "CallExpression": {
