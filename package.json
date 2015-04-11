@@ -21,7 +21,7 @@
     "eslint": "0.18.0",
     "espree": "2.0.0",
     "istanbul": "0.3.13",
-    "mocha": "2.2.1",
+    "mocha": "2.2.4",
     "next-update": "0.7.4"
   },
   "scripts": {
